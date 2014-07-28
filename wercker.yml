@@ -1,0 +1,25 @@
+box: wercker-labs/docker
+no-response-timeout: 10
+build:
+  steps:
+    - script:
+        name: rvm install
+        code: |
+          sudo apt-get update -y
+          curl -sSL https://get.rvm.io | bash -s stable
+          source $HOME/.rvm/scripts/rvm
+          rvm install 2.0.0 --default
+          echo "gem: --no-rdoc --no-ri" >> $HOME/.gemrc
+    - rvm-use:
+        version: 2.0.0
+    - bundle-install
+    - script:
+        name: docker pull
+        code: |
+          docker pull tianon/centos:6.4
+          docker pull tianon/centos:6.5
+    - script:
+        name: kitchen test
+        code: |
+          mv .kitchen.wercker.yml .kitchen.yml
+          bundle exec kitchen test

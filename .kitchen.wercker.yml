@@ -1,0 +1,21 @@
+---
+driver:
+  name: docker
+driver_config:
+  require_chef_omnibus: true
+busser:
+  sudo: true
+
+platforms:
+- name: centos-6.4
+  driver_config:
+    image: tianon/centos:6.4
+- name: centos-6.5
+  driver_config:
+    image: tianon/centos:6.5
+
+suites:
+  - name: default
+    run_list:
+      - recipe[httpd::default]
+    attributes:
