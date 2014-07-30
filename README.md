@@ -1,5 +1,4 @@
-[![wercker status](https://app.wercker.com/status/3cff3ce12f082ca2a08ba97c387a8275/m "wercker status")](https://app.wercker.com/project/bykey/3cff3ce12f082ca2a08ba97c387a8275)
-
+[![wercker status](https://app.wercker.com/status/43f4bf1b00be6dc7c288a2431f85572c/m "wercker status")](https://app.wercker.com/project/bykey/43f4bf1b00be6dc7c288a2431f85572c)
 
 httpd Cookbook
 ==============
